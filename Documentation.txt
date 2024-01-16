@@ -1,0 +1,91 @@
+Uniform Identification System Documentation
+
+Dataset and Additional Resources
+Google Drive Link: Contains the processed dataset images, background-removed images, saved models, and other project resources.
+
+Introduction
+This documentation outlines the process and steps involved in developing a Uniform Identification System for the police forces in Jammu & Kashmir (J&K), Border Security Force (BSF), and Central Reserve Police Force (CRPF). The goal is to create a robust model capable of identifying army personnel from these forces based on their uniforms.
+
+Task Overview
+The primary task is to distinguish between the uniforms of J&K police, BSF, and CRPF. However, due to the visual similarities, the focus was narrowed down to army personnel within these forces to enhance model robustness. The proposed solution involves background removal using a pre-trained model for person identification, followed by a classification model using a Convolutional Neural Network (CNN).
+
+Data Collection
+Image Acquisition:
+Around 60 images were collected for each class (J&K police, BSF, CRPF) to create a diverse dataset for training and testing.
+
+Image Preprocessing
+Background Removal:
+A pre-trained segmentation model, PointRend ResNet50, was used to identify and isolate persons in the images. 
+
+
+
+
+
+
+
+Model Selection
+Model Choice:
+* YOLO (You Only Look Once) was initially considered, but due to the extensive effort required for dataset labeling, this approach was avoided.
+* CNN Classification: For classification, the MobileNetV2 architecture from TensorFlow's Keras Applications was chosen. The lightweight nature of MobileNetV2 makes it suitable for real-time applications and mobile devices.
+* Transformer-Based Models: Transformer-based models were not considered due to computation limitations.
+
+Training and Evaluation
+Model Training:
+* The classification model using MobileNetV2 was trained on the preprocessed dataset.
+Evaluation:
+* Model performance was assessed using validation data, and adjustments were made to enhance accuracy.
+
+Limitations
+Dataset Size:
+* The limited number of images per class may impact model accuracy.
+Computation Limitations:
+* Transformer-based models were excluded due to potential computational constraints.
+
+
+Scalability and Deployment
+Scalability:
+* The provided solution is scalable and can be easily deployed on systems with lower computational capabilities. All the deployment file like docker and flask app is provided. Further reference to Kubernetes is also give in Git-Hub Readme
+Accuracy Enhancement:
+* Increasing the dataset size for each class is recommended for further accuracy improvement.
+
+Conclusion
+The developed Uniform Identification System focuses on distinguishing army personnel in J&K police, BSF, and CRPF through a combination of background removal using PointRend ResNet50 and classification using MobileNetV2. The solution is scalable, and further improvements can be achieved with an expanded dataset. Careful consideration of model limitations and dataset characteristics is crucial for ongoing enhancements.
+
+Summary Of Approch1 (Explained Above):
+Objective:
+* Classify uniforms of armed personnel into distinct categories.
+Methodology:
+* Utilizes PointRend ResNet50 for instance segmentation to remove background from images. 
+* Implements a Convolutional Neural Network (CNN) based on MobileNetV2 for classification. 
+* Categories include CRPF, BSF, J&K Police, and a "Random" category.
+Steps: 
+* Load dataset and preprocess images by removing background and resizing.
+* Train the CNN model with data augmentation, including brightness adjustments. 
+* Save the best-performing model based on validation accuracy.
+Conclusion:
+* Achieves a test accuracy of 88%, indicating successful classification of armed personnel uniforms.
+
+
+
+
+
+Approch2(Kmeans):
+Objective:
+* Achieve classification based on the color of the uniform.
+* Avoid complete dependency on CNN for classification.
+Methodology:
+* Segment the image and extract the region of interest by removing the background.
+* Utilize the k-means algorithm to obtain the color distribution of the image.
+* Use the k-means++ initialization to reduce randomness in the clustering.
+* Plot centroids on a pie chart, where the area is determined by the number of labels belonging to each centroid.
+* Use CNN for classification based on the generated pie chart.
+Limitations:
+* Inference time is higher due to the use of k-means.
+* Accuracy is relatively low, around 50%.
+Conclusion:
+* The presented approach has limitations, with higher inference time and lower accuracy.
+* Another approach is performing better in comparison.
+Note: 
+All the saved models and pie chart images can be found in the drive specified above
+
+

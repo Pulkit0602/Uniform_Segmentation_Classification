@@ -12,7 +12,7 @@ This project involves the development of an image classification system for unif
   - Classify uniforms of armed personnel into distinct categories.
  
 - **`Methodology`:**
-  - Utilizes Pixellib for instance segmentation to remove background from images.
+  - Utilizes PointRend ResNet50  for instance segmentation to remove background from images.
   -Implements a Convolutional Neural Network (CNN) based on MobileNetV2 for classification.
   -Categories include CRPF, BSF, J&K Police, and a "Random" category.
 

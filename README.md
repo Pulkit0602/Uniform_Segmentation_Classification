@@ -1,10 +1,11 @@
 # Uniform_Segmentation_Classification
 
-## Project Description
 
 ## Dataset and Additional Resources
 
 - [Google Drive Link](https://drive.google.com/drive/folders/1HfK11VXf9JGjIigUYfZip74h1ZszWgmL?usp=sharing): Contains the processed dataset images, background-removed images, saved models, and other project resources.
+
+## Project Description
 
 This project involves the development of an image classification system for uniforms of armed personnel. 
 - **`Objective`:**

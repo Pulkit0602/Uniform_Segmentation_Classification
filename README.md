@@ -1,53 +1,71 @@
+# Uniform_Segmentation_Classification
 
-## Uniform_Segmentation_Classification
+## Project Description
 
-### `app.py`
+## Dataset and Additional Resources
 
-Flask web application serving as an API for image classification.
-API endpoint: `/predict`
+- [Google Drive Link](https://drive.google.com/drive/folders/1HfK11VXf9JGjIigUYfZip74h1ZszWgmL?usp=sharing): Contains the processed dataset images, background-removed images, saved models, and other project resources.
 
-### `best_model.h5`
+This project involves the development of an image classification system for uniforms of armed personnel. 
+- **`Objective`:**
+  - Classify uniforms of armed personnel into distinct categories.
+ 
+- **`Methodology`:**
+  - Utilizes Pixellib for instance segmentation to remove background from images.
+  -Implements a Convolutional Neural Network (CNN) based on MobileNetV2 for classification.
+  -Categories include CRPF, BSF, J&K Police, and a "Random" category.
 
-Trained TensorFlow Keras model for image classification.
+- **`Steps`:**
+  -Load dataset and preprocess images by removing background and resizing..
+  -Train the CNN model with data augmentation, including brightness adjustments.
+  -Save the best-performing model based on validation accuracy.
 
-### `Classification_testing.ipynb`
+- **`Conclusion`:**
+  - Achieves a test accuracy of 88%, indicating successful classification of armed personnel uniforms.
 
-Jupyter Notebook for testing the trained model.
-Includes code for model evaluation.
+The key components of the project are as follows:
 
-### `DockerFile`
+## Project Files
 
-Docker configuration file for building a containerized environment.
-Build Docker image: `docker build -t your_project_image .`
+- **`app.py`:**
+  - Flask web application serving as an API for image classification.
+  - API endpoint: `/predict`
 
-### `Documentation.docx`
+- **`best_model.h5`:**
+  - Trained TensorFlow Keras model for image classification.
 
-Microsoft Word document with detailed project documentation.
+- **`Classification_testing.ipynb`:**
+  - Jupyter Notebook for testing the trained model.
+  - Includes code for model evaluation.
 
-### `Image_helper.ipynb`
+- **`DockerFile`:**
+  - Docker configuration file for building a containerized environment.
+  - Build Docker image: `docker build -t your_project_image .`
 
-Jupyter Notebook with helper functions for image visualization.
-Includes code to interact with the Flask API.
+- **`Documentation.docx`:**
+  - Microsoft Word document with detailed project documentation.
 
-### `requirement.txt`
+- **`Image_helper.ipynb`:**
+  - Jupyter Notebook with helper functions for image visualization.
+  - Includes code to interact with the Flask API.
 
-List of Python dependencies.
-Install dependencies: `pip install -r requirement.txt`
+- **`requirement.txt`:**
+  - List of Python dependencies.
+  - Install dependencies: `pip install -r requirement.txt`
 
-### `training_logs.docx` and `training_logs.txt`
+- **`training_logs.docx` and `training_logs.txt`:**
+  - Logs and details about the model training process.
 
-Logs and details about the model training process.
+- **`train_model.py`:**
+  - Script for training the image classification model.
 
-### `train_model.py`
-
-Script for training the image classification model.
 
 ## Getting Started
 
 1. Build Docker image: `docker build -t your_project_image .`
 2. Launch the endpoint
 
-For Docker and Kubernets refer the Repo : https://github.com/Pulkit0602/Classification_Model_Deployment 
+**For Docker and Kubernetes, refer to the [GitHub Repository](https://github.com/Pulkit0602/Classification_Model_Deployment).**
 
 ## Usage
 
@@ -57,6 +75,4 @@ For Docker and Kubernets refer the Repo : https://github.com/Pulkit0602/Classifi
 
 ## Additional Information
 
-For more detailed information, refer to `Documentation.docx`.
-
-
+- For more detailed information, refer to `Documentation.docx`.
